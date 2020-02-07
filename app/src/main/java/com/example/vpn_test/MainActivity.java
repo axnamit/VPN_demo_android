@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         proxyPort.setText(proxyPortPrefValue == 0 ? "" : String.valueOf(proxyPortPrefValue));
         allowed.setChecked(prefs.getBoolean(Prefs.ALLOW, true));
         packages.setText(String.join(", ", prefs.getStringSet(
-                Prefs.PACKAGES, Collections.<String>emptySet())));
+                Prefs.PACKAGES, Collections.emptySet())));
         findViewById(R.id.connect).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

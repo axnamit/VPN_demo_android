@@ -25,8 +25,8 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class VPNService extends VpnService implements Handler.Callback {
     private static final String TAG = VPNService.class.getSimpleName();
-    public static final String ACTION_CONNECT = "com.example.android.toyvpn.START";
-    public static final String ACTION_DISCONNECT = "com.example.android.toyvpn.STOP";
+    public static final String ACTION_CONNECT = "com.example.vpn_test.START";
+    public static final String ACTION_DISCONNECT = "com.example.vpn_test.STOP";
     private Handler mHandler;
 
     private static class Connection extends Pair<Thread, ParcelFileDescriptor> {
@@ -144,7 +144,7 @@ public class VPNService extends VpnService implements Handler.Callback {
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void updateForegroundNotification(final int message) {
-        final String NOTIFICATION_CHANNEL_ID = "ToyVpn";
+        final String NOTIFICATION_CHANNEL_ID = "Vpn";
         NotificationManager mNotificationManager = (NotificationManager) getSystemService(
                 NOTIFICATION_SERVICE);
         mNotificationManager.createNotificationChannel(new NotificationChannel(
